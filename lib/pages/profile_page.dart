@@ -173,7 +173,9 @@ class _IdCardState extends State<IdCard> {
                       color: Colors.lightBlue,
                     ),
                     child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
                         child: Text(
                           'Sign Out',
                           style: TextStyle(

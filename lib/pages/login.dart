@@ -52,7 +52,6 @@ class _LoginPageState extends State<LoginPage> {
       padding: EdgeInsets.fromLTRB(25.0, 8.0, 25.0, 5.0),
       child: TextFormField(
         keyboardType: TextInputType.text,
-        obscureText: true,
         onChanged: (value) {
           setState(() {
             city = value;
