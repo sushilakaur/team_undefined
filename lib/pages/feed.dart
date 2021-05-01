@@ -158,6 +158,7 @@ class _ExploreState extends State<Explore> {
         setState(() {
           _selectedItemIndex = index;
         });
+        index == 0 ? Navigator.pushNamed(context, '/feed') : index == 1 ? Navigator.pushNamed(context, '/home') : Navigator.pushNamed(context, '/home');
       },
       child: Container(
         width: MediaQuery.of(context).size.width / 3,

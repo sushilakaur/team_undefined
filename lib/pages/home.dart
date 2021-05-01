@@ -198,7 +198,7 @@ class _HomeState extends State<Home> {
         setState(() {
           _selectedItemIndex = index;
         });
-        Navigator.pushNamed(context, '/feed');
+        index == 0 ? Navigator.pushNamed(context, '/feed') : index == 1 ? Navigator.pushNamed(context, '/home') : Navigator.pushNamed(context, '/home');
       },
       child: Container(
         width: MediaQuery.of(context).size.width / 3,
