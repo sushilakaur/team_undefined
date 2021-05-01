@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/app_drawer.dart';
 
 
 class Explore extends StatefulWidget {
@@ -16,11 +17,15 @@ class _ExploreState extends State<Explore> {
         title: Text('LOGO'),
         backgroundColor: Colors.black,
         actions: [
-          IconButton(icon: Icon(Icons.drag_handle_rounded),
-              iconSize: 50,
-              onPressed: () => debugPrint("item"))
+          IconButton(icon: Icon(Icons.arrow_back),
+              iconSize: 30,
+              onPressed: () {
+                Navigator.pop(context);
+              }
+          ),
         ],
       ),
+      drawer: AppDrawer(),
       body: Center(
         child: Column(
           children: [

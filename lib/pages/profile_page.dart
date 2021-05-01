@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/app_drawer.dart';
 
 class IdCard extends StatefulWidget {
   @override
@@ -15,14 +16,18 @@ class _IdCardState extends State<IdCard> {
         title: Text('LOGO'),
         backgroundColor: Colors.black,
         actions: [
-          IconButton(icon: Icon(Icons.drag_handle_rounded),
-              iconSize: 50,
-              onPressed: () => debugPrint("item"))
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+              iconSize: 30,
+              onPressed: () {
+            Navigator.pop(context);
+              },
+          )
         ],
       ),
-
+      drawer: AppDrawer(),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0,40.0,30.0,0.0),
+        padding: EdgeInsets.fromLTRB(30.0,20.0,30.0,0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -41,14 +46,15 @@ class _IdCardState extends State<IdCard> {
         ),
       ),
             Divider(
-              height: 60.0,
-              color: Colors.grey[800],
+              height: 40.0,
+              color: Colors.grey[300],
             ),
             Text(
               'NAME',
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
+                fontSize: 14.0,
               ),
             ),
             SizedBox(height: 5.0),
@@ -57,8 +63,7 @@ class _IdCardState extends State<IdCard> {
               style: TextStyle(
                 color: Colors.black,
                 letterSpacing: 2.0,
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
+                fontSize: 18.0,
               ),
             ),
             SizedBox(height: 20.0),
@@ -67,33 +72,118 @@ class _IdCardState extends State<IdCard> {
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
+                fontSize: 14.0,
               ),
             ),
-            SizedBox(height: 10.0),
+            SizedBox(height: 5.0),
             Text(
               'yoshna@gmail.com',
               style: TextStyle(
                 color: Colors.black,
-                letterSpacing: 2.0,
-                fontSize: 20.0,
+                letterSpacing: 1.0,
+                fontSize: 18.0,
               ),
             ),
-            SizedBox(height: 30.0),
-            Row(
+            SizedBox(height: 20.0),
+            Text(
+              'PERSONAL INFORMATION',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+                fontSize: 14.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.email,
-                  color: Colors.grey[400],
+                Row(
+                  children: [
+                    Text(
+                      'Phone Number',
+                      style: TextStyle(
+                        color: Colors.black,
+                        letterSpacing: 1.0,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    Icon(
+                      Icons.more_vert_sharp,
+                      size: 25.0,
+                    ),
+                    SizedBox(width: 10),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 30.0,vertical: 5.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.grey[200],
+                      ),
+                      child: Text(
+                        '9835628253',
+                        style: TextStyle(
+                          color: Colors.black,
+                          letterSpacing: 1.0,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(width: 10.0),
-                Text(
-                  'yoshna@gmail.com',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    letterSpacing: 1.0,
-                    fontSize: 18.0,
+                SizedBox(height: 10.0),
+                Row(
+                  children: [
+                    Text(
+                      'Address',
+                      style: TextStyle(
+                        color: Colors.black,
+                        letterSpacing: 1.0,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    Icon(
+                      Icons.more_vert_sharp,
+                      size: 25.0,
+                    ),
+                    SizedBox(width: 70),
+                    Container(
+                      width: 250,
+                      padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 5.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.grey[200],
+                      ),
+                      child: Text(
+                        '910b road, london 1230459',
+                        style: TextStyle(
+                          color: Colors.black,
+                          letterSpacing: 1.0,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 80),
+                Center(
+                  child:
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 5.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.lightBlue,
+                    ),
+                    child: FlatButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Sign Out',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      color: Colors.lightBlue,
+                    ),
                   ),
-                )
+                ),
               ],
             )
           ],
