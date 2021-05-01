@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team_undefined/pages/app_drawer.dart';
@@ -10,6 +12,7 @@ class Explore extends StatefulWidget {
 
 class _ExploreState extends State<Explore> {
   int _selectedItemIndex = 0;
+  List<bool> isSelected = [false , false];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +31,7 @@ class _ExploreState extends State<Explore> {
       drawer: AppDrawer(),
       body: Center(
         child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(0.0,15.0,0.0,0.0),
@@ -36,48 +40,73 @@ class _ExploreState extends State<Explore> {
                 style: TextStyle(
                   fontSize: 30.0,
                   letterSpacing: 2.0,
-                  color: Colors.grey[800],
+                  color: Colors.black,
                 ),
               ),
             ),
             SizedBox(height: 15.0),
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    height: 40.0,
-                    margin: EdgeInsets.symmetric(horizontal: 30.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.grey,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'Missing',
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                        Container(
-                          height: 20.0,
-                          width: 1.5,
-                          color: Colors.black,
-                        ),
-                        Text(
-                          'Found',
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        )
-                      ],
-                    )
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 40.0),
+           Container(
+             decoration: BoxDecoration(
+               color: Colors.grey[500],
+               //border: Border.all(color: Colors.black, width: 1.0),
+               borderRadius: BorderRadius.all(Radius.circular(30.0)),
+             ),
+             child: ToggleButtons(
+               borderRadius: BorderRadius.circular(30.0),
+               isSelected:isSelected,
+               //renderBorder: true,
+               color: Colors.black,
+               fillColor: Colors.white,
+               hoverColor: Colors.white,
+               selectedColor: Colors.black,
+               borderColor: Colors.grey[500],
+               selectedBorderColor: Colors.grey[500],
+
+               children:<Widget> [
+                 Padding(
+                   padding: const EdgeInsets.fromLTRB(70.0,7.0,70.0,7.0),
+                   child: Text(
+                   'MISSING',
+                     style: TextStyle(
+                       fontWeight: FontWeight.bold,
+                       fontSize: 17.0,
+                     ),
+                   ),
+                 ),
+                 Padding(
+                   padding: const EdgeInsets.fromLTRB(70.0,7.0,70.0,7.0),
+                   child: Text(
+                     'FOUND',
+                     style: TextStyle(
+                       fontWeight: FontWeight.bold,
+                       fontSize: 17.0,
+                     ),
+                   ),
+                 ),
+
+               ],
+               onPressed:(index) {
+                 setState(() {
+                   for(var i=0;i<isSelected.length;i++){
+                     if(i==index){
+                       isSelected[i]=true;
+                     }
+                     else{
+                       isSelected[i]=false;
+                     }
+                   }
+                   if(index==0){
+                     return Missing();
+                   }
+                   else if(index==1){
+                     return found();
+                   }
+                 });
+               },
+
+             ),
+           ),
+            SizedBox(height: 20.0),
             Expanded(
               child: Container(
                 margin: EdgeInsets.only(left: 0, right: 0, top: 8),
