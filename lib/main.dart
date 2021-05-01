@@ -4,10 +4,10 @@ import 'package:team_undefined/pages/feed.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/feed',
+    initialRoute: '/home',
     routes: {
       // '/': (context) => Loading(),
-      '.home': (context) => Home(),
+      '/home': (context) => Home(),
       // '/login': (context) => Login(),
       '/feed': (context) => Explore(),
       // '/loading': (context) => Loading(),
