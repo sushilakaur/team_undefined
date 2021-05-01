@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 40),
           child: Text(
-            'TRAFFIKKOM',
+            'TRAFFIKCOM',
             style: TextStyle(
               fontSize: 35.0,
               fontWeight: FontWeight.bold,
