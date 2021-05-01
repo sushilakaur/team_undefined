@@ -45,67 +45,61 @@ class _ExploreState extends State<Explore> {
               ),
             ),
             SizedBox(height: 15.0),
-           Container(
-             decoration: BoxDecoration(
-               color: Colors.grey[500],
-               //border: Border.all(color: Colors.black, width: 1.0),
-               borderRadius: BorderRadius.all(Radius.circular(30.0)),
-             ),
-             child: ToggleButtons(
-               borderRadius: BorderRadius.circular(30.0),
-               isSelected:isSelected,
-               //renderBorder: true,
-               color: Colors.black,
-               fillColor: Colors.white,
-               hoverColor: Colors.white,
-               selectedColor: Colors.black,
-               borderColor: Colors.grey[500],
-               selectedBorderColor: Colors.grey[500],
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[500],
+                //border: Border.all(color: Colors.black, width: 1.0),
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
+              child: ToggleButtons(
+                borderRadius: BorderRadius.circular(30.0),
+                isSelected:isSelected,
+                //renderBorder: true,
+                color: Colors.black,
+                fillColor: Colors.white,
+                hoverColor: Colors.white,
+                selectedColor: Colors.black,
+                borderColor: Colors.grey[500],
+                selectedBorderColor: Colors.grey[500],
 
-               children:<Widget> [
-                 Padding(
-                   padding: const EdgeInsets.fromLTRB(70.0,7.0,70.0,7.0),
-                   child: Text(
-                   'MISSING',
-                     style: TextStyle(
-                       fontWeight: FontWeight.bold,
-                       fontSize: 17.0,
-                     ),
-                   ),
-                 ),
-                 Padding(
-                   padding: const EdgeInsets.fromLTRB(70.0,7.0,70.0,7.0),
-                   child: Text(
-                     'FOUND',
-                     style: TextStyle(
-                       fontWeight: FontWeight.bold,
-                       fontSize: 17.0,
-                     ),
-                   ),
-                 ),
+                children:<Widget> [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(70.0,7.0,70.0,7.0),
+                    child: Text(
+                      'MISSING',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17.0,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(70.0,7.0,70.0,7.0),
+                    child: Text(
+                      'FOUND',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17.0,
+                      ),
+                    ),
+                  ),
 
-               ],
-               onPressed:(index) {
-                 setState(() {
-                   for(var i=0;i<isSelected.length;i++){
-                     if(i==index){
-                       isSelected[i]=true;
-                     }
-                     else{
-                       isSelected[i]=false;
-                     }
-                   }
-                   if(index==0){
-                     return Missing();
-                   }
-                   else if(index==1){
-                     return found();
-                   }
-                 });
-               },
+                ],
+                onPressed:(index) {
+                  setState(() {
+                    for(var i=0;i<isSelected.length;i++){
+                      if(i==index){
+                        isSelected[i]=true;
+                      }
+                      else{
+                        isSelected[i]=false;
+                      }
+                    }
+                  });
+                },
 
-             ),
-           ),
+              ),
+            ),
             SizedBox(height: 20.0),
             Expanded(
               child: Container(
@@ -126,12 +120,12 @@ class _ExploreState extends State<Explore> {
                   buildPictureCard('https://images.unsplash.com/photo-1611903708839-31b28b003935?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNoaWxkJTIwcG90cmFpdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
                   buildPictureCard('https://images.unsplash.com/photo-1615942581207-42a20ca5cd5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80'),
                   buildPictureCard('https://images.unsplash.com/photo-1578923813875-bf8b98f36b0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGNoaWxkJTIwcG90cmFpdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
-                  buildPictureCard('https://images.unsplash.com/photo-1614398077768-f6869e7a8137?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80'),
-                  buildPictureCard('https://images.unsplash.com/photo-1588701107566-af76b932e2e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'),
-                  buildPictureCard('https://images.unsplash.com/photo-1610919207284-983b309c8469?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGNoaWxkJTIwcG90cmFpdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
-                  buildPictureCard('https://images.unsplash.com/photo-1611903708839-31b28b003935?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNoaWxkJTIwcG90cmFpdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
+                  buildPictureCard('https://images.unsplash.com/photo-1616286949780-50d29ce2ae63?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU3fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
+                  buildPictureCard('https://images.unsplash.com/photo-1544159729-c9380464148c?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDY1fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
+                  buildPictureCard('https://images.unsplash.com/photo-1595064585256-007759ad2316?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=680&q=80'),
+                  buildPictureCard('https://images.unsplash.com/photo-1619451831105-599f9b2b94f3?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
                   buildPictureCard('https://images.unsplash.com/photo-1615942581207-42a20ca5cd5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80'),
-                  buildPictureCard('https://images.unsplash.com/photo-1578923813875-bf8b98f36b0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGNoaWxkJTIwcG90cmFpdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'),
+                  buildPictureCard('https://images.unsplash.com/photo-1598527661665-af197ec31685?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1862&q=80'),
                 ],
                 ),
               ),
