@@ -8,14 +8,24 @@ class Explore extends StatefulWidget {
 }
 
 class _ExploreState extends State<Explore> {
+  int _selectedItemIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('LOGO'),
+        backgroundColor: Colors.grey,
+        actions: [
+          IconButton(icon: Icon(Icons.drag_handle_rounded),
+              iconSize: 50,
+              onPressed: () => debugPrint("item"))
+        ],
+      ),
       body: Center(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0,20.0,0.0,0.0),
+              padding: const EdgeInsets.fromLTRB(0.0,15.0,0.0,0.0),
               child: Text(
                 'Explore Feed',
                 style: TextStyle(
@@ -25,7 +35,7 @@ class _ExploreState extends State<Explore> {
                 ),
               ),
             ),
-            SizedBox(height: 10.0),
+            SizedBox(height: 15.0),
             Row(
               children: [
                 Expanded(
@@ -87,24 +97,80 @@ class _ExploreState extends State<Explore> {
           ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        height: 60,
+        child: FittedBox(
+          child: FloatingActionButton(
+            onPressed: () {},
+            child: Icon(
+              Icons.add,
+            ),
+            backgroundColor: Colors.grey[900],
+            elevation: 15,
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.1),
+                spreadRadius: 1,
+              )
+            ],
+            color: Colors.grey.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(15)),
+        child: Row(
+          children: [
+            buildNavBarItem(Icons.search_sharp, 0),
+            buildNavBarItem(null, -1),
+            buildNavBarItem(Icons.account_circle_sharp, 1),
+          ],
+        ),
+      ),
+    );
+  }
+  Widget buildNavBarItem(IconData icon, int index) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedItemIndex = index;
+        });
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width / 3,
+        height: 45,
+        child: icon != null
+            ? Icon(
+          icon,
+          size: 30,
+          color: index == _selectedItemIndex
+              ? Colors.black
+              : Colors.grey[700],
+        )
+            : Container(),
+      ),
+    );
+  }
+
+  Card buildPictureCard(String url)
+  {
+    return Card(
+      elevation: 10,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: NetworkImage(url),
+            )
+        ),
+      ),
     );
   }
 }
 
 
-Card buildPictureCard(String url)
-{
-  return Card(
-    elevation: 10,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-    child: Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage(url),
-          )
-      ),
-    ),
-  );
-}
+
