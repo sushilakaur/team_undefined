@@ -10,6 +10,7 @@ void main() {
       // '/': (context) => Loading(),
       '/home': (context) => Home(),
       '/login': (context) => LoginPage(),
+
       '/feed': (context) => Explore(),
       // '/loading': (context) => Loading(),
     },
