@@ -45,7 +45,12 @@ class _AppDrawerState extends State<AppDrawer> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          Divider(
+            height: 20.0,
+            indent: 35,
+            endIndent: 35,
+            color: Colors.grey[300],
+          ),
           ListTile(
             leading: Icon(
                 Icons.person,
