@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/app_drawer.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -14,17 +15,18 @@ class _HomeState extends State<Home> {
         title: Text('LOGO'),
         backgroundColor: Colors.black,
         actions: [
-          IconButton(icon: Icon(Icons.drag_handle_rounded),
-              iconSize: 50,
+          IconButton(icon: Icon(Icons.arrow_back),
+              iconSize: 30,
               onPressed: () => debugPrint("item"))
         ],
       ),
+      drawer: AppDrawer(),
       backgroundColor: Colors.grey[100],
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.fromLTRB(30.0,15.0,30.0,30.0),
+            margin: EdgeInsets.fromLTRB(30.0,15.0,30.0,10.0),
             padding: EdgeInsets.all(10.0),
             child:Row(
               children: <Widget>[
@@ -112,45 +114,91 @@ class _HomeState extends State<Home> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Container(
-        height: 60,
-        child: FittedBox(
-          child: FloatingActionButton(
-            onPressed: () {},
-            child: Icon(
-              Icons.add,
-            ),
-            backgroundColor: Colors.grey[900],
-            elevation: 15,
+      floatingActionButton: ActionButton(),
+      bottomNavigationBar: bottomNavBar(),
+    );
+  }
+
+  Widget bottomNavBar() {
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(1),
+                  spreadRadius: 1,
+                )
+              ],
+              color: Colors.lightBlue,
+              borderRadius: BorderRadius.circular(15)),
+          child: Row(
+            children: [
+              buildNavBarItem(Icons.search_sharp, 0),
+              buildNavBarItem(null, -1),
+              buildNavBarItem(Icons.account_circle_sharp, 1),
+            ],
           ),
         ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
-                spreadRadius: 1,
-              )
-            ],
-            color: Colors.grey.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(15)),
-        child: Row(
-          children: [
-            buildNavBarItem(Icons.search_sharp, 0),
-            buildNavBarItem(null, -1),
-            buildNavBarItem(Icons.account_circle_sharp, 1),
-          ],
-        ),
+      ],
+    );
+  }
+
+
+
+
+  Widget ActionButton () {
+    return Container(
+      height: 120,
+      child:
+      Stack(
+        children: [
+          Center(
+            child: Container(
+              height: 70,
+              width: 70,
+              // child: CircleAvatar(
+              //   radius: 70,
+              //   backgroundColor: Colors.grey[200],
+              // )
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(70),
+                color: Colors.grey[100],
+              ),
+            ),
+          ),
+          Center(
+            child: Container(
+              // decoration: BoxDecoration(
+              //   borderRadius: BorderRadius.circular(100),
+              //   color: Colors.grey[200],
+              // ),
+              child: FloatingActionButton(
+                onPressed: () {},
+                child: Icon(
+                  Icons.add,
+                ),
+                backgroundColor: Colors.lightBlue,
+                elevation: 15,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
+
+
+
+
+
   Widget buildNavBarItem(IconData icon, int index) {
     return GestureDetector(
       onTap: () {
         setState(() {
           _selectedItemIndex = index;
         });
+        Navigator.pushNamed(context, '/feed');
       },
       child: Container(
         width: MediaQuery.of(context).size.width / 3,
@@ -160,8 +208,8 @@ class _HomeState extends State<Home> {
           icon,
           size: 30,
           color: index == _selectedItemIndex
-              ? Colors.black
-              : Colors.grey[700],
+              ? Colors.white70
+              : Colors.white,
         )
             : Container(),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/app_drawer.dart';
 
 
 class Explore extends StatefulWidget {
@@ -14,13 +15,17 @@ class _ExploreState extends State<Explore> {
     return Scaffold(
       appBar: AppBar(
         title: Text('LOGO'),
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black,
         actions: [
-          IconButton(icon: Icon(Icons.drag_handle_rounded),
-              iconSize: 50,
-              onPressed: () => debugPrint("item"))
+          IconButton(icon: Icon(Icons.arrow_back),
+              iconSize: 30,
+              onPressed: () {
+                Navigator.pop(context);
+              }
+          ),
         ],
       ),
+      drawer: AppDrawer(),
       body: Center(
         child: Column(
           children: [
@@ -40,7 +45,7 @@ class _ExploreState extends State<Explore> {
               children: [
                 Expanded(
                   child: Container(
-                    height: 50.0,
+                    height: 40.0,
                     margin: EdgeInsets.symmetric(horizontal: 30.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -51,12 +56,20 @@ class _ExploreState extends State<Explore> {
                       children: [
                         Text(
                           'Missing',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
                         ),
-                        Icon(
-                          Icons.more_vert_rounded,
+                        Container(
+                          height: 20.0,
+                          width: 1.5,
+                          color: Colors.black,
                         ),
                         Text(
                           'Found',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
                         )
                       ],
                     )
@@ -100,14 +113,22 @@ class _ExploreState extends State<Explore> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
         height: 60,
-        child: FittedBox(
-          child: FloatingActionButton(
-            onPressed: () {},
-            child: Icon(
-              Icons.add,
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              color: Colors.grey[200],
+          ),
+          child:
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 5.0),
+            child: FloatingActionButton(
+              onPressed: () {},
+              child: Icon(
+                Icons.add,
+              ),
+              backgroundColor: Colors.lightBlue,
+              elevation: 15,
             ),
-            backgroundColor: Colors.grey[900],
-            elevation: 15,
           ),
         ),
       ),
@@ -115,11 +136,11 @@ class _ExploreState extends State<Explore> {
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
+                color: Colors.grey.withOpacity(1),
                 spreadRadius: 1,
               )
             ],
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.lightBlue,
             borderRadius: BorderRadius.circular(15)),
         child: Row(
           children: [
@@ -146,8 +167,8 @@ class _ExploreState extends State<Explore> {
           icon,
           size: 30,
           color: index == _selectedItemIndex
-              ? Colors.black
-              : Colors.grey[700],
+              ? Colors.white
+              : Colors.white70,
         )
             : Container(),
       ),

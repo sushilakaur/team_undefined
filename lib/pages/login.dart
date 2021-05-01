@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -81,7 +82,10 @@ class _LoginPageState extends State<LoginPage> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/home');
+
+            },
             child: Text(
               heading,
               style: TextStyle(
