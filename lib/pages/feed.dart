@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team_undefined/pages/app_drawer.dart';
+import 'package:team_undefined/pages/feedpage_onclick.dart';
 
 
 class Explore extends StatefulWidget {
@@ -181,15 +182,24 @@ class _ExploreState extends State<Explore> {
     return Card(
       elevation: 10,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(url),
-            )
+      child: GestureDetector(
+        onTap: (){
+          Navigator.of(context).pushNamed('/feedonclick', arguments: url,);
+        },
+        child: Hero(
+          tag: url,
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(url),
+                )
+            ),
+          ),
         ),
       ),
+
     );
   }
 }
