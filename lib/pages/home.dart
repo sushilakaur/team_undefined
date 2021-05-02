@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:team_undefined/pages/app_drawer.dart';
+import 'package:team_undefined/components/popUpCard.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -131,7 +132,7 @@ class _HomeState extends State<Home> {
                 )
               ],
               color: Colors.lightBlue,
-              borderRadius: BorderRadius.circular(15)),
+              borderRadius: BorderRadius.circular(1)),
           child: Row(
             children: [
               buildNavBarItem(Icons.search_sharp, 0),
@@ -174,7 +175,12 @@ class _HomeState extends State<Home> {
               //   color: Colors.grey[200],
               // ),
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(context: context,
+                      builder: (BuildContext context) {
+                        return PopUp();
+                      });
+                },
                 child: Icon(
                   Icons.add,
                 ),
@@ -187,9 +193,6 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
-
-
 
 
   Widget buildNavBarItem(IconData icon, int index) {

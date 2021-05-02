@@ -133,34 +133,36 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ClipRRect(
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.6,
-            width: MediaQuery.of(context).size.width * 0.8,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              color: Colors.white,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Hey There!",
-                      style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.height / 30,
+          child: SingleChildScrollView(
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.6,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: Colors.white,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Hey There!",
+                        style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.height / 30,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                _buildNameRow(),
-                _buildLocationRow(),
-                _buildLoginButton("Sign Up"),
-                _buildOrRow(),
-                _buildLoginButton("Login with Google"),
-              ],
+                    ],
+                  ),
+                  _buildNameRow(),
+                  _buildLocationRow(),
+                  _buildLoginButton("Sign Up"),
+                  _buildOrRow(),
+                  _buildLoginButton("Login with Google"),
+                ],
+              ),
             ),
           ),
         ),
