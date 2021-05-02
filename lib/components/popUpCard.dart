@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/addNewPost.dart';
 
 class PopUp extends StatelessWidget {
 
@@ -30,8 +31,9 @@ class PopUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10,),
-                  RaisedButton(onPressed: () {
-
+                  RaisedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/addnew');
                   },
                     color: Colors.lightBlue,
                     child: Text(

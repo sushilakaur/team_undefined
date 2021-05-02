@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:team_undefined/pages/home.dart';
+import 'package:team_undefined/utils/authentication.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -69,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
 
-  Widget _buildLoginButton(String heading) {
+  Widget _buildLoginButton() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -86,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
 
             },
             child: Text(
-              heading,
+              'Log in with Google',
               style: TextStyle(
                 color: Colors.white,
                 letterSpacing: 1.5,
@@ -98,6 +99,41 @@ class _LoginPageState extends State<LoginPage> {
       ],
     );
   }
+
+  Widget _buildSignUpButton() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.only(bottom: 20, top: 20),
+          child: FlatButton(
+            padding: EdgeInsets.fromLTRB(35.0, 10.0, 35.0, 10.0),
+            color: Colors.lightBlue,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            onPressed: () async {
+               Navigator.pushNamed(context, '/home');
+
+            },
+            child: Text(
+              'Sign up with google',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 1.5,
+                fontSize: 20,
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+//   {
+//   Navigator.pushNamed(context, '/home');
+//
+// }
 
   Widget _buildOrRow() {
     return Row(
@@ -158,9 +194,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   _buildNameRow(),
                   _buildLocationRow(),
-                  _buildLoginButton("Sign Up"),
+                  _buildSignUpButton(),
                   _buildOrRow(),
-                  _buildLoginButton("Login with Google"),
+                  _buildLoginButton(),
                 ],
               ),
             ),
@@ -169,6 +205,8 @@ class _LoginPageState extends State<LoginPage> {
       ],
     );
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -194,6 +232,21 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 _buildLogo(),
                 _buildContainer(),
+                FutureBuilder(
+                  future: Authentication.initializeFirebase(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Text('Error initializing Firebase');
+                    } else if (snapshot.connectionState == ConnectionState.done) {
+                      return _buildLoginButton();
+                    }
+                    return CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Colors.lightBlue,
+                      ),
+                    );
+                  },
+                ),
               ],
             )
           ],
