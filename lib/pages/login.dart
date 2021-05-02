@@ -232,21 +232,6 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 _buildLogo(),
                 _buildContainer(),
-                FutureBuilder(
-                  future: Authentication.initializeFirebase(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasError) {
-                      return Text('Error initializing Firebase');
-                    } else if (snapshot.connectionState == ConnectionState.done) {
-                      return _buildLoginButton();
-                    }
-                    return CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        Colors.lightBlue,
-                      ),
-                    );
-                  },
-                ),
               ],
             )
           ],
