@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/addNewPost.dart';
 
 class PopUp extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,9 @@ class PopUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10,),
-                  RaisedButton(onPressed: () {
-
+                  RaisedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/addNew');
                   },
                     color: Colors.lightBlue,
                     child: Text(

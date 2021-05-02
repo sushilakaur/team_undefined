@@ -4,7 +4,6 @@ import 'package:team_undefined/pages/feed.dart';
 import 'package:team_undefined/pages/profile_page.dart';
 import 'package:team_undefined/pages/login.dart';
 import 'pages/feedpage_onclick.dart';
-import 'package:team_undefined/pages/upload_image.dart';
 
 void main() {
   runApp(MaterialApp(
