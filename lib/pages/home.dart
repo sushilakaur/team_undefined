@@ -132,7 +132,7 @@ class _HomeState extends State<Home> {
                 )
               ],
               color: Colors.lightBlue,
-              borderRadius: BorderRadius.circular(1)),
+              borderRadius: BorderRadius.circular(0.1)),
           child: Row(
             children: [
               buildNavBarItem(Icons.search_sharp, 0),
@@ -163,7 +163,7 @@ class _HomeState extends State<Home> {
               //   backgroundColor: Colors.grey[200],
               // )
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(70),
+                borderRadius: BorderRadius.circular(40),
                 color: Colors.grey[100],
               ),
             ),
