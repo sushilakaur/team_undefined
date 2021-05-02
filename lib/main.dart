@@ -7,7 +7,7 @@ import 'pages/feedpage_onclick.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/feed',
+    initialRoute: '/login',
     routes: {
       // '/': (context) => Loading(),
       '/home': (context) => Home(),

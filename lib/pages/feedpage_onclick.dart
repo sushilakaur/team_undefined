@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_undefined/pages/app_drawer.dart';
 
 class FeedOnClick extends StatefulWidget {
   @override
@@ -12,6 +13,20 @@ class _FeedOnClickState extends State<FeedOnClick> {
     String url = ModalRoute.of(context).settings.arguments ;
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text('LOGO'),
+        backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            iconSize: 30,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
+      ),
+      drawer: AppDrawer(),
       body: Column(
         children: [
           Container(
