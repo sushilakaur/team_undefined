@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "857132286334",
+    "project_id": "trafikcom-3e17e",
+    "storage_bucket": "trafikcom-3e17e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857132286334:android:9a82057ef6fa7ce9e8f32f",
+        "android_client_info": {
+          "package_name": "com.example.team_undefined"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857132286334-21na9faj2me62uitch9i6nlk6a27gqnf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.team_undefined",
+            "certificate_hash": "b1d5bcc5ad639b09d4fca988445a3cc54e406ab5"
+          }
+        },
+        {
+          "client_id": "857132286334-mtqj23jn638ar179frjpr474ada2lufo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPoMg6auZjDaeasen3nlhAPYlHd4ChfDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857132286334-mtqj23jn638ar179frjpr474ada2lufo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

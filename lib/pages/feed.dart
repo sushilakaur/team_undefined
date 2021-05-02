@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:team_undefined/components/App_bar.dart';
 import 'package:team_undefined/pages/app_drawer.dart';
 import 'package:team_undefined/pages/feedpage_onclick.dart';
+import 'package:team_undefined/components/App_bar.dart';
 
 
 class Explore extends StatefulWidget {
