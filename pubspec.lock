@@ -57,6 +57,36 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+<<<<<<< HEAD
+  firebase:
+    dependency: transitive
+    description:
+      name: firebase
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "7.3.3"
+  firebase_analytics:
+    dependency: "direct main"
+    description:
+      name: firebase_analytics
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.16"
+  firebase_analytics_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_analytics_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
+  firebase_analytics_web:
+    dependency: transitive
+    description:
+      name: firebase_analytics_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
+=======
   firebase_auth:
     dependency: "direct main"
     description:
@@ -78,27 +108,47 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "0.4.5"
+=======
     version: "1.1.0"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   firebase_core_platform_interface:
     dependency: transitive
     description:
       name: firebase_core_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "1.0.4"
+=======
     version: "4.0.0"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   firebase_core_web:
     dependency: transitive
     description:
       name: firebase_core_web
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "0.1.1+2"
+  firebase_storage:
+    dependency: "direct main"
+    description:
+      name: firebase_storage
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.6"
+=======
     version: "1.0.2"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   flutter:
     dependency: "direct main"
     description: flutter
@@ -110,7 +160,11 @@ packages:
       name: flutter_plugin_android_lifecycle
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "1.0.11"
+=======
     version: "2.0.1"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -121,6 +175,8 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
+=======
   google_sign_in:
     dependency: "direct main"
     description:
@@ -142,40 +198,43 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.0"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   http:
     dependency: transitive
     description:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "0.12.2"
+=======
     version: "0.13.2"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   http_parser:
     dependency: transitive
     description:
       name: http_parser
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+    version: "3.1.4"
+=======
     version: "4.0.0"
+>>>>>>> 054510d9b1cf808d9041d5cbd9005b86d2fafa1e
   image_picker:
     dependency: "direct main"
     description:
       name: image_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.4"
-  image_picker_for_web:
-    dependency: transitive
-    description:
-      name: image_picker_for_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
+    version: "0.6.7+22"
   image_picker_platform_interface:
     dependency: transitive
     description:
       name: image_picker_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
+
     version: "2.1.0"
   intl:
     dependency: transitive
@@ -184,6 +243,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.17.0"
+
   js:
     dependency: transitive
     description:
@@ -225,14 +285,18 @@ packages:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
+
     version: "2.0.0"
+
   quiver:
     dependency: transitive
     description:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
+
     version: "3.0.1"
+
   sky_engine:
     dependency: transitive
     description: flutter
@@ -295,5 +359,7 @@ packages:
     source: hosted
     version: "2.1.0"
 sdks:
+
   dart: ">=2.12.0 <3.0.0"
   flutter: ">=1.20.0"
+
