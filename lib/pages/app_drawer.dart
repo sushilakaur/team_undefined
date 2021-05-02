@@ -95,7 +95,10 @@ class _AppDrawerState extends State<AppDrawer> {
                 fontSize: 18.0,
               ),
             ),
-            onTap: null,
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushNamed('/about');
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings,color: Colors.lightBlue,),

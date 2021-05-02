@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team_undefined/pages/addNewPost.dart';
+import 'package:team_undefined/pages/About_us.dart';
 import 'package:team_undefined/pages/home.dart';
 import 'package:team_undefined/pages/feed.dart';
 import 'package:team_undefined/pages/profile_page.dart';
@@ -18,6 +18,7 @@ void main() {
       '/profile': (context) => IdCard(),
       '/feedonclick' : (context) => FeedOnClick(),
       '/addNew' : (context) => AddNewPost(),
+      '/about' : (context) => AboutUs(),
       // '/loading': (context) => Loading(),
     },
   ));
