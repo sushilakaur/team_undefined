@@ -60,7 +60,7 @@ class PopUp extends StatelessWidget {
                   ),
                   SizedBox(height: 10,),
                   RaisedButton(onPressed: () {
-
+                    Navigator.pushNamed(context, '/addNew');
                   },
                     color: Colors.lightBlue,
                     child: Text(

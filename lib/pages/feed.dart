@@ -213,7 +213,7 @@ class _ExploreState extends State<Explore> {
               )
             ],
             color: Colors.lightBlue,
-            borderRadius: BorderRadius.circular(15)),
+            borderRadius: BorderRadius.circular(10)),
         child: Row(
           children: [
             buildNavBarItem(Icons.search_sharp, 0),
@@ -241,8 +241,8 @@ class _ExploreState extends State<Explore> {
           icon,
           size: 30,
           color: index == _selectedItemIndex
-              ? Colors.white
-              : Colors.white70,
+              ? Colors.white70
+              : Colors.white,
         )
             : Container(),
       ),
